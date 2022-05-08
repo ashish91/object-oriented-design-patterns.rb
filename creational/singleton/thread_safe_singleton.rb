@@ -5,6 +5,11 @@ class Singleton
 
   private_class_method :new
 
+  # Double Locking: Check if instance is already instantiated
+  # if it's then return the Singleton instance
+  # Otherwise have a synchronized access where we check
+  # if instance if initialized or not if it's not then
+  # initialize it
   def self.get_instance
     return @instance if @instance
 
